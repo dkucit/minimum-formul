@@ -128,7 +128,7 @@
     const keyHandler = e => {
       if (document.querySelector('.zoom')) return;
       const n = LETTERS.indexOf(e.key);
-      if (n >= 0 && !answered) { const b = app.querySelector(`.ans[data-i="${n}"]`); if (b) b.click(); }
+      if (n >= 0 && (!answered || isExam)) { const b = app.querySelector(`.ans[data-i="${n}"]`); if (b) b.click(); }
       else if ((e.key === 'Enter' || e.key === ' ') && answered) { e.preventDefault(); const nx = document.getElementById('next'); if (nx) nx.click(); }
     };
     document.addEventListener('keydown', keyHandler);
